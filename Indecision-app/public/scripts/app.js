@@ -21,7 +21,14 @@ var onFormSubmit = function onFormSubmit(event) {
     }
 };
 
+var removeAll = function removeAll() {
+    app.options = [];
+    renderApp();
+};
+
 var appRoot = document.getElementById("app");
+
+var numbers = [55, 101, 1000];
 
 var renderApp = function renderApp() {
     var template = React.createElement(
@@ -41,6 +48,22 @@ var renderApp = function renderApp() {
             'p',
             null,
             app.options.length
+        ),
+        React.createElement(
+            'button',
+            { onClick: removeAll },
+            'Remove All'
+        ),
+        React.createElement(
+            'ol',
+            null,
+            app.options.map(function (op) {
+                return React.createElement(
+                    'li',
+                    { key: op },
+                    op
+                );
+            })
         ),
         React.createElement(
             'form',
