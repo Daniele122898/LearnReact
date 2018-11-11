@@ -23,37 +23,53 @@ var template = React.createElement(
     )
 );
 
-var user = {
-    name: 'Serenity',
-    age: 20,
-    profession: 'weeb'
+var count = 0;
+
+var addOne = function addOne() {
+    count++;
+    renderCounterApp();
 };
 
-function getProfession(profession) {
-    if (profession) return React.createElement(
-        'p',
-        null,
-        profession
-    );
-}
+var subOne = function subOne() {
+    count--;
+    renderCounterApp();
+};
 
-var template2 = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name ? user.name : 'Anonymous'
-    ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    getProfession(user.profession)
-);
+var reset = function reset() {
+    count = 0;
+    renderCounterApp();
+};
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(template2, appRoot);
+var renderCounterApp = function renderCounterApp() {
+    var template2 = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Count: ',
+            count
+        ),
+        React.createElement(
+            'button',
+            { onClick: addOne },
+            '+1'
+        ),
+        React.createElement(
+            'button',
+            { onClick: subOne },
+            '-1'
+        ),
+        React.createElement(
+            'button',
+            { onClick: reset },
+            'reset'
+        )
+    );
+
+    ReactDOM.render(template2, appRoot);
+};
+
+renderCounterApp();
