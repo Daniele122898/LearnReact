@@ -26,7 +26,7 @@ function getProfession(profession) {
 
 var template2 = (
     <div>
-        <h1>{user.name}</h1>
+        <h1>{user.name ? user.name : 'Anonymous'}</h1>
         <p>Age: {user.age}</p>
         {getProfession(user.profession)}
     </div>
