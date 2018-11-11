@@ -30,7 +30,11 @@ var user = {
 };
 
 function getProfession(profession) {
-    if (profession) return profession;else return "unknown";
+    if (profession) return React.createElement(
+        'p',
+        null,
+        profession
+    );
 }
 
 var template2 = React.createElement(
@@ -47,11 +51,7 @@ var template2 = React.createElement(
         'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        getProfession(user.profession)
-    )
+    getProfession(user.profession)
 );
 
 var appRoot = document.getElementById("app");

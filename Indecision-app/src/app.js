@@ -21,16 +21,14 @@ var user = {
 
 function getProfession(profession) {
     if (profession)
-        return profession;
-    else
-        return "unknown";
+        return <p>{profession}</p>;
 }
 
 var template2 = (
     <div>
         <h1>{user.name}</h1>
         <p>Age: {user.age}</p>
-        <p>{getProfession(user.profession)}</p>
+        {getProfession(user.profession)}
     </div>
 );
 
