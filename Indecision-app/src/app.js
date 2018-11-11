@@ -1,14 +1,15 @@
 console.log("App.js is running");
 
+let app = {
+    title: 'Indecision App',
+    subtitle: 'This is a noice app'
+};
+
 // JSX - JavaScript XML
 var template = (
     <div>
-        <h1>Indecision App</h1>
-        <p>This is some info</p>
-        <ol>
-            <li>Item One</li>
-            <li>Item Two</li>
-        </ol>
+        <h1>{app.title}</h1>
+        <p>{app.subtitle}</p>
     </div>
 );
 
@@ -17,11 +18,19 @@ var user = {
     age: 'Who knows >.<',
     profession: 'weeb'
 };
+
+function getProfession(profession) {
+    if (profession)
+        return profession;
+    else
+        return "unknown";
+}
+
 var template2 = (
     <div>
         <h1>{user.name}</h1>
         <p>Age: {user.age}</p>
-        <p>{user.profession}</p>
+        <p>{getProfession(user.profession)}</p>
     </div>
 );
 
