@@ -12,12 +12,16 @@ var template = (
     </div>
 );
 
-var userName = 'Serenity owo';
+var user = {
+    name: 'Serenity',
+    age: 'Who knows >.<',
+    profession: 'weeb'
+};
 var template2 = (
     <div>
-        <h1>{userName +" :o"}</h1>
-        <p>Age: {"Who knows >.<"}</p>
-        <p>Weeb</p>
+        <h1>{user.name}</h1>
+        <p>Age: {user.age}</p>
+        <p>{user.profession}</p>
     </div>
 );
 
