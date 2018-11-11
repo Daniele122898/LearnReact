@@ -24,16 +24,20 @@ const removeAll = () => {
     renderApp();
 };
 
-const appRoot = document.getElementById("app");
+const onMakeDecison = () => {
+    const rand = Math.floor(Math.random() * app.options.length);
+    const selected = app.options[rand];
+    alert(selected);
+};
 
-const numbers = [55, 101, 1000];
+const appRoot = document.getElementById("app");
 
 const renderApp = () => {
     const template = (
         <div>
             <h1>{app.title}</h1>
             <p>{app.subtitle}</p>
-            <p>{app.options.length}</p>
+            <button disabled={app.options.length === 0} onClick={onMakeDecison}>What should I do?</button>
             <button onClick={removeAll}>Remove All</button>
             <ol>
                 {
