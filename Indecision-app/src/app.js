@@ -1,8 +1,23 @@
+class IndecisionApp extends React.Component {
+  render() {
+    const title = "Indecision";
+
+    return (
+      <div>
+        <Header title={title} />
+        <Action />
+        <Options />
+        <AddOption />
+      </div>
+    );
+  }
+}
+
 class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>Indecision-App</h1>
+        <h1>{this.props.title}</h1>
         <h2>Put your life in the hands of a computer</h2>
       </div>
     );
@@ -19,11 +34,35 @@ class Action extends React.Component {
   }
 }
 
-const jsx = (
-  <div>
-    <Header />
-    <Action />
-  </div>
-);
+class Options extends React.Component {
+  render() {
+    return (
+      <div>
+        <Option />
+        <Option />
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(jsx, document.getElementById('app'));
+class Option extends React.Component {
+  render() {
+    return (
+      <div>
+        option here
+      </div>
+    );
+  }
+}
+
+class AddOption extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>Add options shit here kthxbye</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
