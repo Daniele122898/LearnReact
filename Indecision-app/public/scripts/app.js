@@ -175,7 +175,7 @@ var AddOption = function (_React$Component6) {
       // stop full page refresh
       event.preventDefault();
 
-      var option = event.target.elements.option.value;
+      var option = event.target.elements.option.value.trim();
 
       if (option) {
         alert(option);

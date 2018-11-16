@@ -72,7 +72,7 @@ class AddOption extends React.Component {
     // stop full page refresh
     event.preventDefault();
 
-    const option = event.target.elements.option.value;
+    const option = event.target.elements.option.value.trim();
 
     if(option) {
       alert(option);
