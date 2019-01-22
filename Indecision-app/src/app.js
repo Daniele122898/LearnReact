@@ -1,6 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import IndecisionApp from './components/IndecisionApp';
 
-const template = <p>testing 123</p>;
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
 
-  ReactDOM.render(template, document.getElementById('app'));
+class OldSyntax {
+  constructor() {
+    this.name = 'Mike';
+    this.getGreeting = this.getGreeting.bind(this);
+  }
+  getGreeting() {
+    return `Hi my name is ${this.name}.`;
+  }
+}
+
+const oldSyntax = new OldSyntax();
+const getGreeting = oldSyntax.getGreeting;
+console.log(getGreeting());
+
+class NewSyntax {
+  name = "Jen";
+  getGreeting = () => {
+    return `Hi my name is ${this.name}.`;
+  }
+}
+
+const newSyntaxt = new NewSyntax();
+const newGetGreeting = newSyntaxt.getGreeting;
+console.log(newGetGreeting());
