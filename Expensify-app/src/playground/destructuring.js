@@ -7,8 +7,8 @@ const person = {
   }
 };
 
-const {name, age} = person;
-console.log(`${name} is ${age}.`);
+const {name: firstName = 'Anonymous', age = 0} = person;
+console.log(`${firstName} is ${age}.`);
 
 const {city, temp: temperature} = person.location;
 if (city && temperature) {
