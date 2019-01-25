@@ -17,8 +17,8 @@ if (city && temperature) {
 }
 
 // Array destructuring
-const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania'];
 
-const [, stadt, state] = address;
+const [, stadt, state, zip = 8820] = address;
 
-console.log(`You're in ${stadt} ${state}.`);
+console.log(`You're in ${stadt} ${state} ${zip}.`);
