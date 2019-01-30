@@ -16,9 +16,9 @@ store.dispatch(addExpense({description: 'water bill', amount: 1000, createdAt: 1
 // addExpense -> gas bill
 store.dispatch(addExpense({description: 'gas bill', amount: 500, createdAt: 100}));
 // setTextFilter -> bill --> water
-store.dispatch(setTextFilter("bill"));
+store.dispatch(setTextFilter("water"));
 setTimeout(() => {
-  store.dispatch(setTextFilter("water"));
+  store.dispatch(setTextFilter("bill"));
 },3000);
 
 console.log(getVisibleExpenses(store.getState().expenses,store.getState().filter));
