@@ -2,3 +2,6 @@
 **/*.map
 **/.idea
 **/workspace.xml
+**/bundle.js
+**/styles.css
+**/*.map
