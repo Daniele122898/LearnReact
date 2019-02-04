@@ -13,6 +13,51 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+// child_removed
+database.ref('expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+// child_changed
+database.ref('expenses').on('child_changed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+// child_added
+database.ref('expenses').on('child_added', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+/*
+database.ref('expenses')
+  .once('value')
+  .then((snapshot) => {
+    const expenses = [];
+    snapshot.forEach((childSnapshot) => {
+      expenses.push({
+        id: childSnapshot.key,
+        ...childSnapshot.val()
+      });
+    });
+
+    console.log(expenses);
+  });
+*/
+
+/*
+database.ref('expenses').push({
+  description: 'Rent',
+  note: '',
+  amount: 19213,
+  createdAt: 12837812731
+});
+*/
+
+/*
+database.ref('notes').push({
+  title: 'Course topics',
+  body: 'React, native, angular'
+});
+*/
+
+/*
 const onValueChange = database.ref().on('value', (snapshot) => {
   console.log(snapshot.val());
 });
@@ -20,7 +65,7 @@ const onValueChange = database.ref().on('value', (snapshot) => {
 setTimeout(()=> {
   database.ref().off('value', onValueChange);
 }, 7000);
-
+*/
 /*
 database.ref()
   .once('value')
