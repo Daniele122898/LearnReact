@@ -7,10 +7,11 @@ import expenseTotal from "../selectors/expenses-total";
 numeral.locale('CH');
 
 const ExpenseSummary = ({expenseCount, expensesTotal}) => {
-    const exps = expenseCount === 1 ? "expense" : "expenses";
+    const expw = expenseCount === 1 ? "expense" : "expenses";
+    const expensesTotalFormatted = numeral(expensesTotal/100).format("$0,0.00");
     return (
         <div>
-            <p>Viewing {expenseCount} {exps} totalling {numeral(expensesTotal/100).format("$0,0.00")}</p>
+            <h1>Viewing {expenseCount} {expw} totalling {expensesTotalFormatted}</h1>
         </div>
     );
 };
