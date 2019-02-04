@@ -1,18 +1,17 @@
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/database';
+import config from '../config/config';
 
 // Initialize Firebase
-const config = {
-  apiKey: "AIzaSyBi-Gm93TRlrpulBGUBhPdsrXfXKbA8ch8",
-  authDomain: "expensify-9449c.firebaseapp.com",
-  databaseURL: "https://expensify-9449c.firebaseio.com",
-  projectId: "expensify-9449c",
-  storageBucket: "expensify-9449c.appspot.com",
-  messagingSenderId: "886645230633"
-};
+console.log(config);
+
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
+/*
 // child_removed
 database.ref('expenses').on('child_removed', (snapshot) => {
   console.log(snapshot.key, snapshot.val());
@@ -25,6 +24,7 @@ database.ref('expenses').on('child_changed', (snapshot) => {
 database.ref('expenses').on('child_added', (snapshot) => {
   console.log(snapshot.key, snapshot.val());
 });
+*/
 /*
 database.ref('expenses')
   .once('value')
