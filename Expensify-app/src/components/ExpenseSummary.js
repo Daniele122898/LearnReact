@@ -6,19 +6,20 @@ import expenseTotal from "../selectors/expenses-total";
 
 numeral.locale('CH');
 
-const ExpenseSummary = (props) => {
-    const amount = expenseTotal(props.expenses);
-    const exps = props.expenses.length === 1 ? "expense" : "expenses";
+const ExpenseSummary = ({expenseCount, expensesTotal}) => {
+    const exps = expenseCount === 1 ? "expense" : "expenses";
     return (
         <div>
-            <p>Viewing {props.expenses.length} {exps} totalling {numeral(amount/100).format("$0,0.00")}</p>
+            <p>Viewing {expenseCount} {exps} totalling {numeral(expensesTotal/100).format("$0,0.00")}</p>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
+    const expenses = selectExpenses(state.expenses, state.filter);
     return {
-        expenses: selectExpenses(state.expenses, state.filter)
+        expenseCount: expenses.length,
+        expensesTotal: expenseTotal(expenses)
     }
 };
 
