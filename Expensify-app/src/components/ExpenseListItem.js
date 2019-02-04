@@ -2,23 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
-// load a locale
-numeral.register('locale', 'CH', {
-  delimiters: {
-    thousands: "'",
-    decimal: '.'
-  },
-  abbreviations: {
-    thousand: 'k',
-    million: 'm',
-    billion: 'b',
-    trillion: 't'
-  },
-  currency: {
-    symbol: 'CHF'
-  }
-});
-
 // switch between locales
 numeral.locale('CH');
 
