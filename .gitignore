@@ -7,3 +7,5 @@
 **/*.map
 
 **/config/*.json
+
+**/*.env*
