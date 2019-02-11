@@ -15,3 +15,9 @@
 .page-header__actions {
   margin-top: $m-size;
 }
+
+.page-header__subtitle {
+  margin-top: 0;
+  font-weight: 300;
+  color: $darker-grey;
+}
